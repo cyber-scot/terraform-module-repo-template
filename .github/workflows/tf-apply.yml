@@ -10,12 +10,12 @@ jobs:
     name: 'Terraform Apply'
     runs-on: ubuntu-latest
     env:
-      working_directory: 0-pre-req
+      working_directory: examples/standard
       TF_VAR_short: "cscot"
       TF_VAR_env: "prd"
       TF_VAR_loc: "uks"
       checkov_skipped_tests: "CKV_AZURE_33,CKV_AZURE_35,CKV_AZURE_50,CKV_AZURE_59,CKV_AZURE_151,CKV_AZURE_177,CKV_AZURE_206,CKV2_AZURE_1,CKV2_AZURE_31,CKV2_AZURE_33"
-      terraform_compliance_policy_path: "git:https://github.com/libre-devops/utilities.git//?ref=main"
+      terraform_compliance_policy_path: "git:https://github.com/cyber-scot/utilities.git//terraform/helpers/terraform-compliance-tests?ref=main"
       ARM_CLIENT_ID: ${{ secrets.SpokeSvpClientId }}
       ARM_CLIENT_SECRET: ${{ secrets.SpokeSvpClientSecret }}
       ARM_TENANT_ID: ${{ secrets.SpokeTenantId }}
@@ -23,7 +23,7 @@ jobs:
       ARM_USE_AZUREAD: true
       ARM_BACKEND_STORAGE_ACCOUNT: ${{ secrets.SpokeSaName }}
       ARM_BACKEND_BLOB_CONTAINER_NAME: ${{ secrets.SpokeSaBlobContainerName }}
-      ARM_BACKEND_STATE_KEY: "${{ env.TF_VAR_short }}-${{ env.TF_VAR_loc }}-${{ env.TF_VAR_env }}-${{ env.working_directory }}.terraform.tfstate"
+      ARM_BACKEND_STATE_KEY: "${{ env.TF_VAR_short }}-${{ env.TF_VAR_loc }}-${{ env.TF_VAR_env }}-${{ env.project_name }}.terraform.tfstate"
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:

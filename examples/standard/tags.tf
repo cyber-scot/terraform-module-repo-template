@@ -6,7 +6,7 @@ data "external" "detect_os" {
 locals {
   dynamic_tags = {
     "LastUpdated" = data.external.generate_timestamp.result["timestamp"]
-    "Environment" = terraform.workspace
+    "Environment" = var.env
   }
 
   os   = data.external.detect_os.result.os
@@ -23,6 +23,6 @@ variable "static_tags" {
   default = {
     "CostCentre" = "671888"
     "ManagedBy"  = "Terraform"
-    "Contact"    = "help@libredevops.org"
+    "Contact"    = "info@libredevops.org"
   }
 }

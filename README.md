@@ -1,2 +1,27 @@
-# basic-repo-template
-A template repo to base basic repos in.  Includes .gitignore, license and contribution guide.
+
+```hcl
+#
+```
+## Requirements
+
+No requirements.
+
+## Providers
+
+No providers.
+
+## Modules
+
+No modules.
+
+## Resources
+
+No resources.
+
+## Inputs
+
+No inputs.
+
+## Outputs
+
+No outputs.

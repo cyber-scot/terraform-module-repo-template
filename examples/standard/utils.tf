@@ -1,5 +1,5 @@
 data "http" "client_ip" {
- url = "https://checkip.amazonaws.com"
+  url = "https://checkip.amazonaws.com"
 }
 
 variable "Regions" {

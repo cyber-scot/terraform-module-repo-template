@@ -12,7 +12,9 @@ pool:
 
 variables:
   - name: working_directory
-    value: '0-pre-req'
+    value: 'examples/standard'
+  - name: project_name
+    value: "test-build"
   - name: env
     value: 'prd'
   - name: short
@@ -22,7 +24,7 @@ variables:
   - name: checkov_skipped_tests
     value: 'CKV_AZURE_33,CKV_AZURE_35,CKV_AZURE_50,CKV_AZURE_59,CKV_AZURE_151,CKV_AZURE_177,CKV_AZURE_206,CKV2_AZURE_1,CKV2_AZURE_31,CKV2_AZURE_33'
   - name: terraform_compliance_policy_path
-    value: 'git:https://github.com/cyber-scot/utilities.git//?ref=main'
+    value: 'git:https://github.com/cyber-scot/utilities.git//terraform/helpers/terraform-compliance-tests?ref=main'
   - name: ARM_CLIENT_ID
     value: $(SpokeSvpClientId)
   - name: ARM_CLIENT_SECRET
@@ -38,7 +40,7 @@ variables:
   - name: ARM_BACKEND_BLOB_CONTAINER_NAME
     value: $(SpokeSaBlobContainerName)
   - name: ARM_BACKEND_STATE_KEY
-    value: '${{ variables.short }}-${{ variables.loc }}-${{ variables.env }}-${{ env.working_directory }}.terraform.tfstate'
+    value: '${{ variables.short }}-${{ variables.loc }}-${{ variables.env }}-${{ variables.project_name }}.terraform.tfstate'
 
   - group: ${{ parameters.VARIABLE_GROUP_NAME }}
 
