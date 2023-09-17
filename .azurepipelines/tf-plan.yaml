@@ -4,11 +4,23 @@ pr: none
 parameters:
   - name: VARIABLE_GROUP_NAME
     type: string
-    default: 'kv-cscot-uks-prd-mgmt-01'  # replace with your default variable group name if any
+    default: 'kv-cscot-uks-prd-mgmt-01'
+  - name: poolName
+    type: string
+    default: 'CyberScotAzdoPrdMgmtPool'
+    values:
+      - 'Azure Pipelines'
+      - 'CyberScotAzdoPrdMgmtPool'
+  - name: vmImage
+    type: string
+    default: 'ubuntu-latest'
 
 pool:
-  name: 'Azure Pipelines'
-  vmImage: 'ubuntu-latest'
+  ${{ if eq(parameters.vmImage, '') }}:
+    name: ${{ parameters.poolName }}
+  ${{ if ne(parameters.vmImage, '') }}:
+    name: ${{ parameters.poolName }}
+    vmImage: ${{ parameters.vmImage }}
 
 variables:
   - name: project_name
