@@ -9,10 +9,11 @@ parameters:
   - name: poolName
     displayName: "Azure Pipelines Pool Name"
     type: string
-    default: 'CyberScotAzdoPrdMgmtPool'
+    default: 'CyberScotAzdoPrdMgmtLinuxPool'
     values:
       - 'Azure Pipelines'
-      - 'CyberScotAzdoPrdMgmtPool'
+      - 'CyberScotAzdoPrdMgmtLinuxPool'
+      - 'CyberScotAzdoPrdMgmtWindowsPool'
   - name: vmImage
     displayName: "Azure Pipelines VM image - not needed for self-hosted"
     type: string
