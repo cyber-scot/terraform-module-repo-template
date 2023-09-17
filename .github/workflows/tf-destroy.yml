@@ -40,7 +40,7 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Install Tfsev, TfSec, Terraform-Compliance & CheckOv
+      - name: Install Tfenv, TfSec, Terraform-Compliance & CheckOv
         id: install-packages
         run: |
           if [ -z "${terraform_tfenv_version}" ]; then
