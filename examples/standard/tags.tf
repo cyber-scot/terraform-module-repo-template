@@ -23,6 +23,6 @@ variable "static_tags" {
   default = {
     "CostCentre" = "671888"
     "ManagedBy"  = "Terraform"
-    "Contact"    = "info@libredevops.org"
+    "Contact"    = "info@cyber.scot"
   }
 }
