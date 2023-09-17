@@ -11,10 +11,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  - name: working_directory
-    value: 'examples/standard'
   - name: project_name
     value: "test-build"
+  - name: working_directory
+    value: 'examples/standard'
   - name: env
     value: 'prd'
   - name: short
@@ -121,8 +121,6 @@ stages:
         ARM_TENANT_ID: ${{ variables.SpokeTenantId }}
         ARM_SUBSCRIPTION_ID: ${{ variables.SpokeSubId }}
         ARM_USE_AZUREAD: 'true'
-
-
 
     - bash: |
         terraform-compliance -p tfplan.json -f "${terraform_compliance_policy_path}"
