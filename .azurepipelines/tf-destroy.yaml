@@ -54,7 +54,7 @@ variables:
 
 
 stages:
-- stage: TerraformPlan
+- stage: TerraformDestroy
   jobs:
   - ${{ if eq(parameters.poolName, 'Azure Pipelines') }}:
     - job: AzureHostedJob
