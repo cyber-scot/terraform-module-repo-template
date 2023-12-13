@@ -203,5 +203,5 @@ if ($ErrorOccurred) {
     Write-Error "Error: The script completed with errors. Check the error messages above."
 }
 else {
-    Write-Host "Success: The script completed successfully without errors."
+    Write-Host "Success: The script completed successfully without errors." -ForegroundColor Green
 }
